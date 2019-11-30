@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Document 10</title>
 </head>
 <body>
 <div id="app">
-    <div >
-        用户名：
-        <label>
-            <input type="text" v-model="uname">
-        </label>
-    </div>
-    <div >
-        密码:
-        <label>
-            <input type="text" v-model="pwd">
-        </label>
-    </div>
     <div>
-        <input type="button" value="提交" @click="handleSubmit">
+        <input type="text" v-on:keyup.aaa="handle" v-model="info">
     </div>
 </div>
 <script type="text/javascript" src="js/vue.js"></script>
 <script type="text/javascript">
     /**
-     *
+     *事件绑定-自定义按键修饰符
+     * 规则: 自定义按键修饰符名字是自定义的，但是对应的值必须是按键对应
+     * event.KeyCode值
      */
+    Vue.config.keyCodes.aaa = 65;
     var vm = new Vue({
         el: '#app',
         data: {
+            info: ""
 
         },
-        methods:{
-            handleSubmit() {
+        methods: {
+            handle() {
+                console.log(event.keyCode)
             }
         }
 
