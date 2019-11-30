@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Document 09</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        用户名：
+        <label>
+            <input type="text" v-model="uname" v-on:keyup.delete="cleanContent">
+        </label>
+    </div>
+    <div>
+        密码:
+        <label>
+            <input type="text" v-model="pwd" v-on:keyup.enter="handleSubmit">
+        </label>
+    </div>
+    <div>
+        <input type="button" value="提交" @click="handleSubmit">
+    </div>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+    /**
+     *
+     */
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            uname: '',
+            pwd: ''
+
+        },
+        methods: {
+            handleSubmit() {
+                console.log(this.uname, this.pwd)
+            },
+            cleanContent() {
+                // 按delete键的时候清空用户名
+                this.uname = ''
+            }
+        }
+
+
+    })
+
+</script>
+</body>
+</html>

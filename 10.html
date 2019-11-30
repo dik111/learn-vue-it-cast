@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <div >
+        用户名：
+        <label>
+            <input type="text" v-model="uname">
+        </label>
+    </div>
+    <div >
+        密码:
+        <label>
+            <input type="text" v-model="pwd">
+        </label>
+    </div>
+    <div>
+        <input type="button" value="提交" @click="handleSubmit">
+    </div>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+    /**
+     *
+     */
+    var vm = new Vue({
+        el: '#app',
+        data: {
+
+        },
+        methods:{
+            handleSubmit() {
+            }
+        }
+
+
+    })
+
+</script>
+</body>
+</html>
