@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <div :style="{border:borderStyle,width:widthStyle
+    ,height:heightStyle}"></div>
+    <div :style="objStyles"></div>
+    <div :style="[objStyles,overrideStyle]"></div>
+    <button @click="handle">切换</button>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            borderStyle: "1px solid blue",
+            widthStyle: "100px",
+            heightStyle: "200px",
+            objStyles: {
+                border: "1px solid green",
+                width: "200px",
+                height: "100px"
+            },
+            overrideStyle: {
+                border: "5px solid orange",
+                backgroundColor: "blue"
+            }
+        },
+        methods: {
+            handle() {
+                this.heightStyle = "100px";
+                this.objStyles.width = "100px";
+
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
