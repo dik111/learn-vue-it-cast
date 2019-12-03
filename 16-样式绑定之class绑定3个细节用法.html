@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document 15</title>
+    <style>
+        .active {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .error {
+            background-color: orange;
+        }
+
+        .test {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div :class="[activeClass,errorClass,{test:isTest}]">测试样式</div>
+    <div :class="arrClasses"></div>
+    <div class="base" :class="objClasses"></div>
+    <button @click="handle">切换</button>
+</div>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript">
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            activeClass: 'active',
+            errorClass: 'error',
+            isTest: true,
+            arrClasses: ['active', 'error'],
+            objClasses: {
+                active: true,
+                error: true
+            }
+        },
+        methods: {
+            handle() {
+                // this.activeClass = "";
+                // this.errorClass = "";
+                // this.isTest = ""
+                this.objClasses.error = false;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
